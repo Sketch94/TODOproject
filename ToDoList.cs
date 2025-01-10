@@ -11,8 +11,6 @@ namespace TODOproject
     {
         private List<string> _toDoList = new();
 
-        
-
         public void Add(string item)
         {
             _toDoList.Add(item);
@@ -26,12 +24,9 @@ namespace TODOproject
             }
         }
 
-        public void Print()
+       public List<string> GetListOfItems()
         {
-            foreach (var item in _toDoList)
-            {
-                Console.WriteLine(item);
-            }
-        }
+            return _toDoList;
+        }   
     }
 }

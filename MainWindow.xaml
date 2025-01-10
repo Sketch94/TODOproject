@@ -5,8 +5,27 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TODOproject"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="ToDo" Height="417" Width="810">
+    
     <Grid>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="300"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Button x:Name="AddButton" Content="Lägg till uppgift" Width="100" Height="30" Grid.Column="1" Click="AddButton_Click" ></Button>
+        <TextBox x:Name="AddAssignment" Width="600" Height="30" Grid.Row="0" Grid.Column="0"></TextBox>
+        <ListBox x:Name="AssignmentList" Grid.Row="1" Grid.Column="0"></ListBox>
+
+        <Button x:Name="RemoveButton" Content="Radera uppgift" Width="100" Height="30" Grid.Column="1" Grid.Row="2" Click="RemoveButton_Click" ></Button>
+        <!-- <TextBox x:Name="AddAssignment" Width="600" Height="30" Grid.Row="0" Grid.Column="0"></TextBox > -->
 
     </Grid>
 </Window>
