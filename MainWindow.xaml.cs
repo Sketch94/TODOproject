@@ -19,15 +19,22 @@ namespace TODOproject
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
             string task = AddAssignment.Text;
-            if (!string.IsNullOrEmpty(task))
+            if (string.IsNullOrEmpty(task))
             {
+                MessageBox.Show("Ingen uppgift angiven.", "Fel", MessageBoxButton.OK, MessageBoxImage.None);
+                return;
+            }
+            else
+            {
+                MessageBox.Show("Uppgift tillagd.", "Lyckades", MessageBoxButton.OK, MessageBoxImage.Information);
                 _toDoList.Add(task);
-                UpdateTaskSyle();
+                UpdateTaskStyle();
                 AddAssignment.Clear();
             }
+
         }
 
-        private void UpdateTaskSyle()
+        private void UpdateTaskStyle()
         {
             AssignmentList.Items.Clear();
             foreach (var task in _toDoList.GetListOfItems())
@@ -42,7 +49,7 @@ namespace TODOproject
             if (AssignmentList.SelectedIndex >= 0)
             {
                 _toDoList.Remove(AssignmentList.SelectedIndex);
-                UpdateTaskSyle();
+                UpdateTaskStyle();
             }
         }
     }

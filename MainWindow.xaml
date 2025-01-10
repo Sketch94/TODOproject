@@ -5,27 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TODOproject"
         mc:Ignorable="d"
-        Title="ToDo" Height="417" Width="810">
-    
-    <Grid>
+        WindowStyle="SingleBorderWindow"
+        Background="White"
+        Title="ToDo" Height="450" Width="800">
+    <Border Padding="20">
+        <Grid>
 
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="150"/>
-        </Grid.ColumnDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="150"/>
+            </Grid.ColumnDefinitions>
 
-        <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="300"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
-        
-        <Button x:Name="AddButton" Content="Lägg till uppgift" Width="100" Height="30" Grid.Column="1" Click="AddButton_Click" ></Button>
-        <TextBox x:Name="AddAssignment" Width="600" Height="30" Grid.Row="0" Grid.Column="0"></TextBox>
-        <ListBox x:Name="AssignmentList" Grid.Row="1" Grid.Column="0"></ListBox>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="71*"/>
+                <RowDefinition Height="259.04"/>
+                <RowDefinition Height="31*"/>
+            </Grid.RowDefinitions>
 
-        <Button x:Name="RemoveButton" Content="Radera uppgift" Width="100" Height="30" Grid.Column="1" Grid.Row="2" Click="RemoveButton_Click" ></Button>
-        <!-- <TextBox x:Name="AddAssignment" Width="600" Height="30" Grid.Row="0" Grid.Column="0"></TextBox > -->
+            <Button x:Name="AddButton" Style="{StaticResource RoundedButton}" Content="Lägg till uppgift" Grid.Column="1"  Width="120" Height="30" VerticalAlignment="Top" Click="AddButton_Click"/>
+            <TextBox x:Name="AddAssignment" Style="{StaticResource RoundedTextBox}" Grid.Row="0" Grid.Column="0" Margin="0,0,20,0" Height="30" VerticalAlignment="Top" FontFamily="Poppins"/>
+            <ListBox x:Name="AssignmentList" Style="{StaticResource RoundedListbox}" Grid.Row="1" Grid.Column="0" Margin="0,0,20,0"/>
 
-    </Grid>
+            <Button x:Name="RemoveButton" Style="{StaticResource RoundedButton}" Content="Radera uppgift" Grid.Column="1" Grid.Row="1" Width="120" Height="30" VerticalAlignment="Bottom" Click="RemoveButton_Click"/>
+
+        </Grid>
+    </Border>
 </Window>
